@@ -27,7 +27,7 @@ Things you may want to cover:
 
   |Column|Type|Options|
   |------|----|-------|
-  |group_name|String|null: false, unique: true|
+  |name|String|null: false, unique: true|
   |member_id|integer|null: false, foreign_key: true|
   |message_id|integer|null: false, foreign_key: true|
 
@@ -39,7 +39,7 @@ Things you may want to cover:
 
   |Column|Type|Options|
   |------|----|-------|
-  |user_name|String|null: false, unique: true|
+  |name|String|null: false, unique: true|
   |member_id|integer|null: false, foreign_key: true|
   |email|String|null: false, unique: true|
   |encrypted_password|String|null: false, |
@@ -54,8 +54,8 @@ Things you may want to cover:
   |------|----|-------|
   |group_id|integer|null: false, foreign_key: true,|
   |user_id|integer|null: false, foreign_key: true,|
-  |body|text|null: true,|
-  |image|string|null: true, |
+  |body|text||
+  |image|string||
 
   ### Association
   - belongs_to :user
