@@ -39,7 +39,7 @@ Things you may want to cover:
 
   |Column|Type|Options|
   |------|----|-------|
-  |name|String|null: false, unique: true|
+  |user_name|String|null: false, unique: true|
   |member_id|integer|null: false, foreign_key: true|
   |email|String|null: false, unique: true|
   |encrypted_password|null: false, |
@@ -77,7 +77,7 @@ Things you may want to cover:
 
   |Column|Type|Options|
   |------|----|-------|
-  |name|String|null: false, unique: true|
+  |group_name|String|null: false, unique: true|
   |member_id|integer|null: false, foreign_key: true|
   |message_id|integer|null: false, foreign_key: true|
 
