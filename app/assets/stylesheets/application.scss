@@ -1,6 +1,43 @@
 @import "./reset";
 
 
+
+.side-header
+  background-color: #253141
+  width: 300px
+  margin:0 20px
+  .hedder-top
+    .hedder-top--title
+    .hedder-top--button-edit
+    .hedder-top--button-conf
+  .hedder-bottom
+    .side-hedder--topic
+.main
+  .main-top
+    .main-top--title
+    .main-top--info
+    .main-top--button-edit
+  .mail-midle
+    .mail-midle--inner
+  .main-bottom
+    .main-bottom--form
+    .main-bottom--button-send
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  *= require font-awesome
  */
+
