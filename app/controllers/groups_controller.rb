@@ -33,4 +33,5 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+
 end
