@@ -37,12 +37,17 @@ body{
 //   color: white;
 // }
 
+.wrapper{
+  @include box(100% , 100% );
+}
+
+
 .side-bar{
-  @include box(300px , calc(100% - 30px));
+  @include box(300px , 100% );
   background-color: #2f3e51;
   position: relative;
   float: left;
-}
+
 
   .header{
     @include box(calc(100% - 40px) , 100px);
@@ -52,7 +57,7 @@ body{
 
     &__name{
       padding-top: 35px;
-      width: calc(100% - 40px);
+      width: calc(100% - 50px);
       color: $hedder-color;
       font-size: 16px;
       font-weight: bold;
@@ -73,21 +78,21 @@ body{
     //   font: bold;
     // }
   }
-  .hedder-bottom{
+  .groups{
     @include box(calc(100% - 40px) , calc(100% - 120px));
     background-color: #2f3e51;
     padding: 20px 20px 0 20px;
-
-    .side-hedder--topic{
+    .group{
+      @include box(calc(100% - 40px) , 71px);
       color: $hedder-color;
 
-      &__title{
+      &__name{
         font-size: 15px;
         font-weight: bold;
         color: $hedder-color;
         padding-bottom: 5px;
       }
-      &__comment{
+      &__message{
         font-size: 11px;
         font-weight: bold;
         color: $hedder-color;
@@ -95,6 +100,7 @@ body{
       }
     }
   }
+}
 
 
 .main{
