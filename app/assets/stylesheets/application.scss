@@ -10,21 +10,22 @@
 // @import "modules/side_bar";
 // @import "modules/chat";
 // @import "messages/messages.scss"
+@import "modules/group";
 
 
 /*
  *= require font-awesome
  */
 
-
+$hedder-color: #ffffff;
+$main-color: #434a54;
 
 @mixin box($width , $height){
   width: $width;
   height: $height;
 }
 
-$hedder-color: #ffffff;
-$main-color: #434a54;
+
 
 
 div{display: block;
@@ -39,7 +40,7 @@ body{
   @include box(100% , 100%);
 }
 .header{
-  height: 30px;
+  height: 28px;
   background-color: #38aef0;
   text-align: center;
   line-height: 30px;
