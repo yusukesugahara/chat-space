@@ -1,6 +1,9 @@
 @import "./reset";
-
+@import "modules/user";
 @import "font-awesome";
+@import "config/colors";
+@import "modules/flash";
+@import "modules/group";
 
 /*
  *= require font-awesome
@@ -26,28 +29,28 @@ html{
 body{
   @include box(100% , 100%);
 }
-.header{
-  height: 30px;
-  background-color: #38aef0;
-  text-align: center;
-  line-height: 30px;
-  color: white;
-}
+// .header{
+//   height: 30px;
+//   background-color: #38aef0;
+//   text-align: center;
+//   line-height: 30px;
+//   color: white;
+// }
 
-.side-header{
+.side-bar{
   @include box(300px , calc(100% - 30px));
   background-color: #2f3e51;
   position: relative;
   float: left;
 }
 
-  .hedder-top{
+  .header{
     @include box(calc(100% - 40px) , 100px);
     background-color: #253141;
     padding:0 20px;
     font-weight: bold;
 
-    &--title{
+    &__name{
       padding-top: 35px;
       width: calc(100% - 40px);
       color: $hedder-color;
@@ -56,19 +59,19 @@ body{
       color: $hedder-color;
       float: left;
     }
-    &--button-edit{
+      .list{
       padding-top: 35px;
       float: right;
       color: $hedder-color;
       font-weight: bold;
       padding-right: 7px;
     }
-    &--button-conf{
-      padding-top: 35px;
-      float: right;
-      color: $hedder-color;
-      font: bold;
-    }
+    // &--button-conf{
+    //   padding-top: 35px;
+    //   float: right;
+    //   color: $hedder-color;
+    //   font: bold;
+    // }
   }
   .hedder-bottom{
     @include box(calc(100% - 40px) , calc(100% - 120px));
@@ -132,27 +135,32 @@ body{
       float: left;
     }
   }
-  .mail-midle{
+  .main-midle{
     padding: 46px 40px 0 40px;
+    &--inner{
 
-    &--inner_name{
-      font-weight: bold ;
-      font-size: 16px;
-      color: $main-color;
-      float: left;
-      padding-right: 10px;
-    }
-    &--inner_time{
-      font-size: 12px;
-      color: #999999;
+      &_name{
+        font-weight: bold ;
+        font-size: 16px;
+        color: $main-color;
+        float: left;
+        padding-right: 10px;
+      }
+      &_time{
+        font-size: 12px;
+        color: #999999;
 
+      }
     }
-    &--inner_comment{
-      font-size: 14px;
-      color: $main-color;
-      clear: both;
-      padding-top: 10px;
-      margin-bottom:40px;
+
+    &--inner2{
+      &_comment{
+        font-size: 14px;
+        color: $main-color;
+        clear: both;
+        padding-top: 10px;
+        margin-bottom:40px;
+      }
     }
   }
 

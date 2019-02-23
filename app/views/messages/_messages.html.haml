@@ -7,23 +7,30 @@
     .main-top--info
       Member：test1111
 
-  .mail-midle
-    .mail-midle--inner
-      .mail-midle--inner_name
+  .main-midle
+    .main-midle--inner
+      .main-midle--inner_name
         test-user
-      .mail-midle--inner_time
+      .main-midle--inner_time
         12/13(Wed) 17:50:42
-      .mail-midle--inner_comment
+    .main-midle--inner2
+      .main-midle--inner2_comment
         こんにちは
-      .mail-midle--inner_name
+
+    .main-midle--inner
+      .main-midle--inner_name
         test-user
-      .mail-midle--inner_time
+      .main-midle--inner_time
         12/13(Wed) 17:50:42
-      .mail-midle--inner_comment
+    .main-midle--inner2
+      .main-midle--inner2_comment
         さようなら
 
+
+  / ここから送信ボタン（UI作成時に記入）
   %form.main-bottom{:action => "/", :method => "post"}
     %input.main-bottom--form{:type => "text", :name => "name", :placeholder => "type a message"}
     %button.main-bottom--img
       =fa_icon("image")
     %input.main-bottom--button-send{:type => "submit", :value => "送信"}
+    / ここまで作成ボタン
