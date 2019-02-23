@@ -145,27 +145,30 @@ body{
       float: left;
     }
   }
-  .mail-midle{
+  .main-midle{
     padding: 46px 40px 0 40px;
-
-    &--inner_name{
-      font-weight: bold ;
-      font-size: 16px;
-      color: $main-color;
-      float: left;
-      padding-right: 10px;
+    &--upper-inner
+      &__name{
+        font-weight: bold ;
+        font-size: 16px;
+        color: $main-color;
+        float: left;
+        padding-right: 10px;
+      }
+      &__time{
+        font-size: 12px;
+        color: #999999;
+      }
     }
-    &--inner_time{
-      font-size: 12px;
-      color: #999999;
 
-    }
-    &--inner_comment{
-      font-size: 14px;
-      color: $main-color;
-      clear: both;
-      padding-top: 10px;
-      margin-bottom:40px;
+    &--lower-inner{
+      &__comment{
+        font-size: 14px;
+        color: $main-color;
+        clear: both;
+        padding-top: 10px;
+        margin-bottom:40px;
+      }
     }
   }
 
