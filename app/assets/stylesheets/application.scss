@@ -1,17 +1,30 @@
 @import "./reset";
 @import "font-awesome";
+@import "config/colors";
+@import "modules/user";
+// @import "config/size";
+// @import "config/reset";
+// @import "mixins/mixin";
+// @import "mixins/vendor_prefix";
+@import "modules/flash";
+// @import "modules/side_bar";
+// @import "modules/chat";
+// @import "messages/messages.scss"
+
 
 /*
  *= require font-awesome
  */
 
-$hedder-color: #ffffff;
-$main-color: #434a54;
+
 
 @mixin box($width , $height){
   width: $width;
   height: $height;
 }
+
+$hedder-color: #ffffff;
+$main-color: #434a54;
 
 
 div{display: block;
