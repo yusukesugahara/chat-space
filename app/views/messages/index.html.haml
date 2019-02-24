@@ -29,7 +29,7 @@
       .side-hedder--topic__comment
         まだメッセージがありません。
 
-=render partial: "messages"
+= render @messages
 
     .form
       = form_for [@group, @message] do |f|
@@ -41,4 +41,3 @@
         = f.submit 'Send', class: 'form__submit'
 
    .messages
-      = render @messages

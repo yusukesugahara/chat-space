@@ -38,66 +38,77 @@ html{
 
 body{
   @include box(100% , 100%);
-}
-.header{
-  height: 28px;
-  background-color: #38aef0;
-  text-align: center;
-  line-height: 30px;
-  color: white;
+
+.wrapper{
+  @include box(100% , 100%)
 }
 
-.side-header{
-  @include box(300px , calc(100% - 30px));
+}
+
+
+// .header{
+//   height: 28px;
+//   background-color: #38aef0;
+//   text-align: center;
+//   line-height: 30px;
+//   color: white;
+// }
+
+.side-bar{
+  @include box(300px , 100%);
   background-color: #2f3e51;
   position: relative;
   float: left;
-}
 
-  .hedder-top{
+
+  .header{
     @include box(calc(100% - 40px) , 100px);
     background-color: #253141;
     padding:0 20px;
-    font-weight: bold;
 
-    &--title{
+    &--name{
       padding-top: 35px;
-      width: calc(100% - 40px);
+      width: calc(100% - 50%);
       color: $hedder-color;
       font-size: 16px;
       font-weight: bold;
-      color: $hedder-color;
       float: left;
-    }
-    &--button-edit{
-      padding-top: 35px;
-      float: right;
-      color: $hedder-color;
       font-weight: bold;
-      padding-right: 7px;
     }
-    &--button-conf{
-      padding-top: 35px;
-      float: right;
-      color: $hedder-color;
-      font: bold;
+
+    &--lists{
+      &__list1{
+        padding-top: 35px;
+        float: right;
+        color: $hedder-color;
+        font-weight: bold;
+        padding-right: 7px;
+      }
+      &__list2{
+        padding-top: 35px;
+        padding-right: 5px;
+        float: right;
+        color: $hedder-color;
+        font: bold;
+      }
     }
   }
-  .hedder-bottom{
+
+  .groups{
     @include box(calc(100% - 40px) , calc(100% - 120px));
     background-color: #2f3e51;
     padding: 20px 20px 0 20px;
 
-    .side-hedder--topic{
+    .group{
       color: $hedder-color;
 
-      &__title{
+      &__name{
         font-size: 15px;
         font-weight: bold;
         color: $hedder-color;
         padding-bottom: 5px;
       }
-      &__comment{
+      &__message{
         font-size: 11px;
         font-weight: bold;
         color: $hedder-color;
@@ -105,7 +116,7 @@ body{
       }
     }
   }
-
+}
 
 .main{
   @include box( calc(100% - 300px), calc(100% - 30px));
@@ -117,6 +128,7 @@ body{
     height: 100px;
     padding: 0 40px;
     border-bottom: solid 2px #eeeeee;
+    text-decoration: none ;
 
     &--title{
       padding-top: 35px;
@@ -147,7 +159,7 @@ body{
   }
   .main-midle{
     padding: 46px 40px 0 40px;
-    &--upper-inner
+    &--upper-inner{
       &__name{
         font-weight: bold ;
         font-size: 16px;
@@ -170,7 +182,9 @@ body{
         margin-bottom:40px;
       }
     }
+
   }
+
 
 
 
