@@ -1,3 +1,10 @@
+
+.side-bar
+  .header
+    %h3.header__name
+      / = current_user.name
+
+
 - if controller_name != 'sessions'
   = link_to "Log in", new_session_path(resource_name), class: 'btn'
   %br/

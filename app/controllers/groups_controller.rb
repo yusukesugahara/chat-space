@@ -10,6 +10,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+
       if @group.save
         redirect_to root_path, notice: 'グループを作成しました'
       else
@@ -18,6 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -37,4 +39,5 @@ class GroupsController < ApplicationController
   def set_group
     @group = Group.find(params[:id])
   end
+
 end
