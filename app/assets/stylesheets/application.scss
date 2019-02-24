@@ -3,6 +3,10 @@
 @import "font-awesome";
 @import "config/colors";
 @import "modules/flash";
+
+// @import "modules/side_bar";
+// @import "modules/chat";
+// @import "messages/messages.scss"
 @import "modules/group";
 
 
@@ -12,7 +16,6 @@
 
 $hedder-color: #ffffff;
 $main-color: #434a54;
-
 
 @mixin box($width , $height){
   width: $width;
@@ -30,23 +33,26 @@ html{
 
 body{
   @include box(100% , 100%);
+
+.wrapper{
+  @include box(100% , 100%)
 }
 
+
+}
+
+
 // .header{
-//   height: 30px;
+//   height: 28px;
 //   background-color: #38aef0;
 //   text-align: center;
 //   line-height: 30px;
 //   color: white;
 // }
 
-.wrapper{
-  @include box(100% , 100% );
-}
-
-
 .side-bar{
-  @include box(300px , 100% );
+  @include box(300px , 100%);
+
   background-color: #2f3e51;
   position: relative;
   float: left;
@@ -57,40 +63,44 @@ body{
     @include box(calc(100% - 40px) , 100px);
     background-color: #253141;
     padding:0 20px;
-    font-weight: bold;
 
 
-    &__name{
+    &--name{
       padding-top: 35px;
-      width: calc(100% - 50px);
+      width: calc(100% - 50%);
       color: $hedder-color;
       font-size: 16px;
       font-weight: bold;
-      color: $hedder-color;
       float: left;
-    }
-
-      .list{
-      padding-top: 35px;
-      float: right;
-      color: $hedder-color;
       font-weight: bold;
-      padding-right: 7px;
     }
 
-    // &--button-conf{
-    //   padding-top: 35px;
-    //   float: right;
-    //   color: $hedder-color;
-    //   font: bold;
-    // }
+    &--lists{
+      &__list1{
+        padding-top: 35px;
+        float: right;
+        color: $hedder-color;
+        font-weight: bold;
+        padding-right: 7px;
+      }
+      &__list2{
+        padding-top: 35px;
+        padding-right: 5px;
+        float: right;
+        color: $hedder-color;
+        font: bold;
+      }
+    }
   }
+
+
   .groups{
     @include box(calc(100% - 40px) , calc(100% - 120px));
     background-color: #2f3e51;
     padding: 20px 20px 0 20px;
+
     .group{
-      @include box(calc(100% - 40px) , 71px);
+
       color: $hedder-color;
 
       &__name{
@@ -120,6 +130,7 @@ body{
     height: 100px;
     padding: 0 40px;
     border-bottom: solid 2px #eeeeee;
+    text-decoration: none ;
 
     &--title{
       padding-top: 35px;
@@ -151,24 +162,24 @@ body{
 
   .main-midle{
     padding: 46px 40px 0 40px;
-    &--inner{
+    &--upper-inner{
+      &__name{
 
-      &_name{
         font-weight: bold ;
         font-size: 16px;
         color: $main-color;
         float: left;
         padding-right: 10px;
       }
-      &_time{
+
+      &__time{
         font-size: 12px;
         color: #999999;
-
       }
     }
 
-    &--inner2{
-      &_comment{
+    &--lower-inner{
+      &__comment{
         font-size: 14px;
         color: $main-color;
         clear: both;
@@ -176,7 +187,10 @@ body{
         margin-bottom:40px;
       }
     }
+
+
   }
+
 
 
 

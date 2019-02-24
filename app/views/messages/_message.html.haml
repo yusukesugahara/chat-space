@@ -21,14 +21,3 @@
 
 
 
-
-  / ここから送信ボタン（UI作成時に記入）
-
-  %form.main-bottom{:action => "/", :method => "post"}
-    %input.main-bottom--form{:type => "text", :name => "name", :placeholder => "type a message"}
-    %button.main-bottom--img
-      =fa_icon("image")
-    %input.main-bottom--button-send{:type => "submit", :value => "送信"}
-
-    / ここまで作成ボタン
-

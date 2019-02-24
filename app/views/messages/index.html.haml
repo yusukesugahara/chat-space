@@ -6,10 +6,12 @@
     .hedder-top--title
       test
     .hedder-top--button-conf
-      =fa_icon("cog")
+      = link_to new_group_path do
+        =fa_icon("cog")
 
     .hedder-top--button-edit
-      =fa_icon("edit")
+      = link_to edit_user_path(current_user) do
+        =fa_icon("edit")
 
   .hedder-bottom
     .side-hedder--topic
@@ -27,4 +29,15 @@
       .side-hedder--topic__comment
         まだメッセージがありません。
 
-=render partial: "messages"
+= render @messages
+
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+   .messages
