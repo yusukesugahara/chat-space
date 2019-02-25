@@ -35,7 +35,8 @@ body{
   @include box(100% , 100%);
 
 .wrapper{
-  @include box(100% , 100%)
+  min-width: 700px;
+  height: 100%
 }
 
 
@@ -56,6 +57,7 @@ body{
   background-color: #2f3e51;
   position: relative;
   float: left;
+  position: fixed;
 
 
   .header{
@@ -75,7 +77,10 @@ body{
       font-weight: bold;
     }
 
+
     &--lists{
+      .icon{color: $hedder-color;
+      }
       &__list1{
         padding-top: 35px;
         float: right;
@@ -103,6 +108,10 @@ body{
 
       color: $hedder-color;
 
+      a:-webkit-any-link {
+          text-decoration: none;
+      }
+
       &__name{
         font-size: 15px;
         font-weight: bold;
@@ -121,16 +130,21 @@ body{
 }
 
 .main{
-  @include box( calc(100% - 300px), calc(100% - 30px));
+  @include box( calc(100% - 300px), calc(100% - 90px));
   background-color: #fafafa;
   float: right;
   position: relative;
-}
+
+
   .main-top{
     height: 100px;
+    width:calc(100% - 380px);
     padding: 0 40px;
     border-bottom: solid 2px #eeeeee;
     text-decoration: none ;
+    position: fixed;
+    background-color: #fafafa;
+
 
     &--title{
       padding-top: 35px;
@@ -138,6 +152,11 @@ body{
       font-size: 20px;
       width: 50%;
       float: left;
+    }
+    .edit-button{
+      color: #38aef0;
+      text-decoration: none;
+
     }
     &--button-edit{
       margin-top: 28px;
@@ -162,6 +181,11 @@ body{
 
   .main-midle{
     padding: 46px 40px 0 40px;
+    height: calc(100% - 150px);
+    overflow-y: auto;
+    margin-top: 102px;
+    margin-bottom: 90px;
+
     &--upper-inner{
       &__name{
 
@@ -190,21 +214,23 @@ body{
 
 
   }
+}
 
 
 
 
-  .main-bottom{
-    @include box(calc(100% - 80px),70px );
+  .form{
+    @include box(calc(100% - 380px),70px );
     bottom: 0;
     right: 0;
     padding: 10px 40px 10px 40px;
     background-color:#ddd;
     line-height:70px;
     position: absolute;
+    position: fixed;
 
-    &--form{
-      @include box( calc(100% - 205px),50px );
+    &__message{
+      @include box( calc(100% - 172px),50px );
       padding-left: 10px;
       padding-right: 10px;
       margin-top: 10px;
@@ -216,18 +242,29 @@ body{
         color: $main-color;
       }
 
-    &--img{
-      @include box( 50px,50px );
+    &__mask{
+      @include box( 27px,50px );
       border-color: white;
       margin-right:10px;
       margin-top:10px;
-      float:left;
+      float: left;
       font-size: larger;
+      background-color: white;
+      line-height: 3rem;
+
+
+
     }
-    &--button-send{
+    #message_image{
+      display: none;
+    }
+
+    &__submit{
       @include box( 100px,50px );
       margin-left: 15px;
+      margin-top: 10px;
       background-color: #38AEF0;
       color: white;
+      float: right;
     }
   }
