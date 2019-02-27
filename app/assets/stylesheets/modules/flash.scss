@@ -1,5 +1,6 @@
 .notification {
-
+    position: relative;
+    z-index: 20;
   .notice {
     background-color: $light_blue;
     color: $white;
