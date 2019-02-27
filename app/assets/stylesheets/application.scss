@@ -130,7 +130,7 @@ body{
 }
 
 .main{
-  @include box( calc(100% - 300px), calc(100% - 90px));
+  @include box( calc(100% - 300px), calc(100% - 112px));
   background-color: #fafafa;
   float: right;
   position: relative;
