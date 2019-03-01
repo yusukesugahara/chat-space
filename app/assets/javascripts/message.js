@@ -1,10 +1,6 @@
 $(function(){
   function buildHTML(message){
-    if ( !message.image ) {
-      var image_box = ` `
-    } else {
-      var image_box = `<img class="lower-message__image" src="${message.image}" alt="Is">`
-    }
+   var image_box = !message.image ? '' : `<img class="lower-message__image" src=${message.image} alt="Is">`
     var html = `<div class="main-midle--upper-inner" >
                   <div class="main-midle--upper-inner__name">
                     ${message.user_name}
@@ -37,8 +33,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.main-midle').append(html)
-      $('#message_content').val('')
-      $('#message_image').val('')
+      $('#new_message')[0].reset()
     })
     .fail(function(){
       alert('error');
