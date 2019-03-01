@@ -181,10 +181,11 @@ body{
 
   .main-midle{
     padding: 46px 40px 0 40px;
-    height: calc(100% - 150px);
+    height: calc(100% - 112px);
     overflow-y: auto;
     margin-top: 102px;
     margin-bottom: 90px;
+    background-color: #fafafa;
 
     &--upper-inner{
       &__name{
