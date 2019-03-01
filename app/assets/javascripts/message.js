@@ -31,7 +31,7 @@ $(function(){
       contentType: false
     })
     .done(function(jsondata){
-      var html = buildSendMessageHTML(data);
+      var html = buildSendMessageHTML(jsondata);
       $('.main-midle').append(html)
       $('#new_message')[0].reset()
     })
