@@ -1,5 +1,5 @@
 $(function(){
-  function buildHTML(message){
+  function buildSendMessageHTML(message){
    var image_box = !message.image ? '' : `<img class="lower-message__image" src=${message.image} alt="Is">`
     var html = `<div class="main-midle--upper-inner" >
                   <div class="main-midle--upper-inner__name">
@@ -30,8 +30,8 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      var html = buildHTML(data);
+    .done(function(jsondata){
+      var html = buildSendMessageHTML(data);
       $('.main-midle').append(html)
       $('#new_message')[0].reset()
     })
