@@ -29,8 +29,7 @@ $(function(){
       type: 'GET',
       data: { keyword: input },
       dataType: 'json',
-      // processData: false,
-      // contentType: false
+
     })
     .done(function(users){
       search_list.empty();
