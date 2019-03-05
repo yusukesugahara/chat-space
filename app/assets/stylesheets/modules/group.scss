@@ -60,6 +60,42 @@
       float: right;
       width: 70%;
     }
+    .user-search-result-candidate{
+      height: 50px;
+      float: left;
+      width: 100%;
+      line-height: 30px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      border: solid;
+      border-width: 1px;
+      border-color: white;
+      border-bottom-color: #DDDDDD;
+      .user-search-result-candidate-add{
+        float:right;
+        color: #38aef0;
+      }
+    }
+    .chat-group-form__field--right-item{
+      height: 50px;
+      float: left;
+      width: 100%;
+      line-height: 30px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      border: solid;
+      border-width: 1px;
+      border-color: white;
+      border-bottom-color: #DDDDDD;
+
+
+      .chat-group-form__field--right-item-add{
+        float:right;
+        color: #ef3764;
+      }
+
+    }
+
 
     .chat-group-form__label {
       display: block;
@@ -75,6 +111,7 @@
       padding: 10px 15px;
       box-sizing: border-box;
     }
+
   }
 
   .chat-group-user {
