@@ -19,8 +19,8 @@ $(function(){
           <div class="user-search-result-candidate
             test">${message}
             </div>`
+    search_list.append(html)
   }
-
 
   $('#user-search-field').on('keyup', function(){
     var input = $('#user-search-field').val()
