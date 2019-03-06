@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.where('name Like(?)',"%#{params[:keyword]}%").limit(10)
+
+    menber_user = params.require(:users) if !params[:users].nil?
+
+
+    @users = User.where('name Like(?)',"%#{params[:keyword]}%").limit(10).where.not(id: menber_user)
     respond_to do |format|
       format.json
     end
