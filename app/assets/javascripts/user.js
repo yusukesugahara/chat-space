@@ -1,12 +1,15 @@
 $(function(){
+  var chat_member = [];
+  // var user_id = null;
+  // var user_name = null;
+
 
   var search_list = $('#user-search-result');
 
   function displayUserHTML(user){
-     html =  `
+    html =  `
           <div class="user-search-result-candidate
             test" value="${user.name}" >${user.name}
-
             <div class="user-search-result-candidate-add", id="${user.id}" >追加
             </div>
           </div>
@@ -15,7 +18,7 @@ $(function(){
   }
 
   function displayUserNoHTML(message){
-     html =  `
+    html =  `
           <div class="user-search-result-candidate
             test">${message}
             </div>`
@@ -51,7 +54,19 @@ $(function(){
     })
   })
 
-    var add_url = '.user-search-result-candidate-add'
+// ページが表示された時の処理
+  $(window).on("load", function(){
+    $(".chat-group-user").each(function(){
+
+      var user_name = ($(this).attr("value"));
+      var user_id = ($(this).children('.chat-group-user__btn--remove').attr("value"));
+      var hash = {id: user_id,name: user_name}
+      return chat_member.push(hash)
+    });
+  });
+
+
+  var add_url = '.user-search-result-candidate-add'
 
   function displayedUserHTML(user_name,user_id){
     var html_remove =`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8' value='${user_name}'>
@@ -62,29 +77,63 @@ $(function(){
     $('#user-group-add-list').append(html_remove)
   }
 
-    $(document).on('click',add_url,function(){
-      var user_name = $(this).parent().attr('value')
-      var user_id = $(this).attr('id')
-      $(this).parent().remove()
+// 追加ボタンが押された時の処理
+  $(document).on('click',add_url,function(){
+    var user_name = $(this).parent().attr('value')
+    var user_id = $(this).attr('id')
+    hash = {id: user_id,name: user_name}
+    chat_member.push(hash)
+    $(this).parent().remove()
+
+    $('.chat-group-user').remove()
+
+// チャットグループの表示
+    chat_member.forEach(function(value){
+      user_id = value.id
+      user_name = value.name
       displayedUserHTML(user_name,user_id)
     })
+  })
 
-    function RedisplayUserHTML(user_name,user_id){
-     html =  `
-          <div class="user-search-result-candidate
-            test" value="${user_name}" >${user_name}
-
-            <div class="user-search-result-candidate-add", id="${user_id}" >追加
-            </div>
+  function RedisplayUserHTML(user_name,user_id){
+   html =  `
+        <div class="user-search-result-candidate
+          test" value="${user_name}" >${user_name}
+          <div class="user-search-result-candidate-add", id="${user_id}" >追加
           </div>
-    `
-    search_list.append(html)
+        </div>
+  `
+  search_list.append(html)
   }
-    $(document).on('click','.chat-group-user__btn--remove',function(){
-      var user_name = $(this).parent().attr('value')
-      var user_id = $(this).attr('id')
-      $(this).parent().remove()
-      RedisplayUserHTML(user_name,user_id)
-    })
 
-})
+// 削除ボタンが押された時の処理
+  $(document).on('click','.chat-group-user__btn--remove',function(){
+    var user_name = $(this).parent().attr('value')
+    var user_id = $(this).attr('value')
+    $('.chat-group-user').remove()
+
+
+// チャットユーザー欄の削除完了
+
+// サーチ結果に表示
+    RedisplayUserHTML(user_name,user_id)
+
+
+// 配列から削除
+    num = 0
+    chat_member.forEach(function(value){
+      if (user_id === value.id){
+        chat_member.splice(num, 1)
+      }
+    num += 1
+    });
+
+
+// 配列からチャットグループの表示
+    chat_member.forEach(function(value){
+      user_id = value.id
+      user_name = value.name
+      displayedUserHTML(user_name,user_id)
+    });
+  });
+});
