@@ -71,11 +71,19 @@
       border-width: 1px;
       border-color: white;
       border-bottom-color: #DDDDDD;
+      font-size:14px;
       &-add{
         float:right;
         color: #38aef0;
       }
+      &-add:hover{
+        float:right;
+        color: #38aef0;
+        opacity: 0.5;
+      }
+
     }
+// 旧
     &--right-item{
       height: 50px;
       float: left;
@@ -138,6 +146,10 @@
       &--remove {
         color: #f05050;
       }
+    }
+    .chat-group-user__btn:hover{
+      color: #f05050;
+      opacity: 0.5;
     }
   }
 
