@@ -112,7 +112,6 @@ $(function(){
 // サーチ結果に表示
     RedisplayUserHTML(user_name,user_id)
 
-
 // 配列から削除
     num = 0
     chat_member.forEach(function(value){
@@ -121,7 +120,6 @@ $(function(){
       }
     num += 1
     });
-
 
 // 配列からチャットグループの表示
     chat_member.forEach(function(value){

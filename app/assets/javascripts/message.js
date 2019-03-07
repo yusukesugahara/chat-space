@@ -44,4 +44,27 @@ $(function(){
     });
 
   })
+  setInterval(function(){
+    var formData = new FormData('#new_message');
+    var url = $('#new_message').attr('action')
+    $.ajax({
+      url: url,
+      type: "GET",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(messages){
+      $('.main-midle--upper-inner').remove()
+      $('.main-midle--lower-inner').remove()
+      messages.forEach(function(message){
+      var html = buildSendMessageHTML(message);
+      $('.main-midle').append(html)
+        });
+    })
+    .fail(function(){
+      alert('error');
+    })
+  },5000);
 })
