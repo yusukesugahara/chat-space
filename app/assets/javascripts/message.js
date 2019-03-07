@@ -59,9 +59,9 @@ $(function(){
       $('.main-midle--upper-inner').remove()
       $('.main-midle--lower-inner').remove()
       messages.forEach(function(message){
-      var html = buildSendMessageHTML(message);
-      $('.main-midle').append(html)
-        });
+        var html = buildSendMessageHTML(message);
+        $('.main-midle').append(html)
+      });
     })
     .fail(function(){
       alert('error');
