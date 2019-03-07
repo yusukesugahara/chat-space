@@ -1,8 +1,5 @@
 $(function(){
   var chat_member = [];
-  // var user_id = null;
-  // var user_name = null;
-
 
   var search_list = $('#user-search-result');
 
@@ -65,7 +62,6 @@ $(function(){
     });
   });
 
-
   var add_url = '.user-search-result-candidate-add'
 
   function displayedUserHTML(user_name,user_id){
@@ -112,8 +108,6 @@ $(function(){
     var user_id = $(this).attr('value')
     $('.chat-group-user').remove()
 
-
-// チャットユーザー欄の削除完了
 
 // サーチ結果に表示
     RedisplayUserHTML(user_name,user_id)
