@@ -52,12 +52,14 @@ $(document).on('turbolinks:load', function() {
   })
 
 // ページが表示された時の処理
-  $(window).on("load", function(){
+
+  $(window).ready(function(){
     $(".chat-group-user").each(function(){
 
       var user_name = ($(this).attr("value"));
       var user_id = ($(this).children('.chat-group-user__btn--remove').attr("value"));
       var hash = {id: user_id,name: user_name}
+      console.log(hash)
       return chat_member.push(hash)
     });
   });
