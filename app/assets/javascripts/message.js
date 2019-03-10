@@ -22,6 +22,13 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
+    var test = $('#message_content').val().length ;
+    var test2 = $('#message_image').val().length ;
+
+    if ( test == "0" && test2 == "0" ) {
+      alert('メッセージを入力してください')
+      return false;
+    }
     $.ajax({
       url: url,
       type: "POST",

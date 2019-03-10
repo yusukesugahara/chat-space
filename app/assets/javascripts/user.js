@@ -59,7 +59,6 @@ $(document).on('turbolinks:load', function() {
       var user_name = ($(this).attr("value"));
       var user_id = ($(this).children('.chat-group-user__btn--remove').attr("value"));
       var hash = {id: user_id,name: user_name}
-      console.log(hash)
       return chat_member.push(hash)
     });
   });
