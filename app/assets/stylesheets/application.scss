@@ -3,10 +3,6 @@
 @import "font-awesome";
 @import "config/colors";
 @import "modules/flash";
-
-// @import "modules/side_bar";
-// @import "modules/chat";
-// @import "messages/messages.scss"
 @import "modules/group";
 
 
@@ -34,30 +30,17 @@ html{
 body{
   @include box(100% , 100%);
 
-.wrapper{
-  min-width: 700px;
-  height: 100%
+  .wrapper{
+    min-width: 700px;
+    height: 100%
+  }
 }
-
-
-}
-
-
-// .header{
-//   height: 28px;
-//   background-color: #38aef0;
-//   text-align: center;
-//   line-height: 30px;
-//   color: white;
-// }
-
 .side-bar{
-  @include box(300px , 100%);
+  @include box(300px , 100vh);
 
   background-color: #2f3e51;
   position: relative;
   float: left;
-  position: fixed;
 
 
   .header{
@@ -138,11 +121,9 @@ body{
 
   .main-top{
     height: 100px;
-    width:calc(100% - 380px);
     padding: 0 40px;
     border-bottom: solid 2px #eeeeee;
     text-decoration: none ;
-    position: fixed;
     background-color: #fafafa;
 
 
@@ -183,8 +164,6 @@ body{
     padding: 46px 40px 0 40px;
     height: calc(100% - 112px);
     overflow-y: auto;
-    margin-top: 102px;
-    margin-bottom: 90px;
     background-color: #fafafa;
 
     &--upper-inner{
@@ -228,7 +207,6 @@ body{
     background-color:#ddd;
     line-height:70px;
     position: absolute;
-    position: fixed;
 
     &__message{
       @include box( calc(100% - 172px),50px );
