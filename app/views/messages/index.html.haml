@@ -28,7 +28,7 @@
     .main-top--title
       = @group.name
     .main-top--button-edit
-      = link_to ' Edit ', "/groups/#{current_user.id}/edit" , method: :get ,
+      = link_to ' Edit ', "/groups/#{@group.id}/edit" , method: :get ,
       class: 'edit-button'
 
     .main-top--info
