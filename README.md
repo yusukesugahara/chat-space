@@ -2,7 +2,7 @@
 ## chat-spaceとは
 チャットアプリです。グループにユーザーを招待し、メッセージや画像のやりとりができます。
 
-* Database creation
+## DB設計
  ## membersテーブル
 
   |Column|Type|Options|
