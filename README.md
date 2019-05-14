@@ -1,4 +1,6 @@
 # README
+## chat-spaceとは
+チャットアプリです。グループにユーザーを招待し、メッセージや画像のやりとりができます。
 
 * Database creation
  ## membersテーブル
